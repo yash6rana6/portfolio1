@@ -5,7 +5,7 @@ import DownloadCVButton from '../Utilis/DownloadCV';
 
 function About() {
     return (
-        <section id='about '>
+        <section id='about'>
             <div className={AboutCSS.about}>
                 <div className={AboutCSS.about_img}>
                     <img src={About_img} alt="" />

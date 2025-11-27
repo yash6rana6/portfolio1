@@ -34,7 +34,7 @@ function Service() {
   ];
 
   return (
-    <section id="service">
+    <section id="services">
       <div className={ServiceCSS.service}>
         <h2>Service</h2>
         <p>

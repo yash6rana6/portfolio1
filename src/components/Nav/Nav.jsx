@@ -1,40 +1,45 @@
 import React, { useState } from "react";
-import NavCSS from "./../Nav/Nav.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import NavCSS from "./Nav.module.css";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const toggleNav = () => {
-    setIsOpen(!isOpen);
+  const handleNavClick = (path, sectionId) => {
+    navigate(path); 
+    setIsOpen(false);
+
+    setTimeout(() => {
+      document.getElementById(sectionId)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 100); 
   };
 
   return (
-    <>
-      <section>
-        <header className={NavCSS.header}>
-          <div className={NavCSS.logo}>
-            <h2>
-              Y<span>ash Deep Singh</span>
-            </h2>
-          </div>
+    <header className={NavCSS.header}>
+      <div className={NavCSS.logo}>
+        <h2>
+          Y<span>ash Deep Singh</span>
+        </h2>
+      </div>
 
-          <div className={`${NavCSS.nav} ${isOpen ? NavCSS.open : ""}`}>
-            <a href="#">Home</a>
-            <a href="/about">About Me</a>
-            <a href="/servies">Services</a>
-            <a href="/projects">Projects</a>
-            <a href="/contact">Contact</a>
-          </div>
+      <nav className={`${NavCSS.nav} ${isOpen ? NavCSS.open : ""}`}>
+        <span onClick={() => handleNavClick("/", "home")}>Home</span>
+        <span onClick={() => handleNavClick("/about", "about")}>About</span>
+        <span onClick={() => handleNavClick("/services", "services")}>Services</span>
+        <span onClick={() => handleNavClick("/projects", "projects")}>Projects</span>
+        <span onClick={() => handleNavClick("/contact", "contact")}>Contact</span>
+      </nav>
 
-          <div className={NavCSS.bars} onClick={toggleNav}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </header>
-      </section>
-    </>
+      <div className={NavCSS.bars} onClick={() => setIsOpen(!isOpen)}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
   );
 }
 

@@ -3,6 +3,8 @@ import ProjectCSS from "./../Projects/Projects.module.css";
 import Img1 from "./../../assets/images/ecommerce.png";
 import Img2 from "./../../assets/images/7.png";
 import Img3 from "./../../assets/images/Spotify.png";
+import Img4 from "./../../assets/images/MentorHub.png"
+
 
 function Projects() {
   return (
@@ -59,17 +61,16 @@ function Projects() {
               <a href="https://github.com/yash6rana6/Realtime_spotify_clone.git" target="_blank" >Read more...</a>
             </div>
           </div>
-          {/* <div className={ProjectCSS.projects_card}>
+          <div className={ProjectCSS.projects_card}>
             <img src={Img4} alt="Project-Img-4" />
             <div>
-              <h4>Uber Clone</h4>
+              <h4>Mentor Hub</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-                modi ab nemo!
+             MentorHub is an AI-driven platform that helps users practice mock interviews in real-time
               </p>
               <a href="https://github.com/yash6rana6/Spotify.git" target="_blank">Read more...</a>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </section>
