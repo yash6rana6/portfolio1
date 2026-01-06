@@ -68,7 +68,7 @@ function Projects() {
               <p>
              MentorHub is an AI-driven platform that helps users practice mock interviews in real-time
               </p>
-              <a href="https://github.com/yash6rana6/Spotify.git" target="_blank">Read more...</a>
+              <a href="https://mentor-hub-fawn.vercel.app/" target="_blank">Read more...</a>
             </div>
           </div>
         </div>
